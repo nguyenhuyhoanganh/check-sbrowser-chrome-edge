@@ -3,6 +3,10 @@
 File này chứa đầy đủ patch, có thể copy sang máy có source bản fork để áp dụng.
 Phân tích nguyên nhân chi tiết: xem `root-cause-analysis.md`.
 
+> **Base Chromium mới:** cách A trong file này search lại ở mỗi sự kiện tạo
+> bookmark, nên nếu import lúc đang search sẽ tốn gần O(n²). Với base mới, dùng
+> `fix-patch-new-base.md` (search lại 1 lần mỗi lô sự kiện).
+
 ## 1. Tóm tắt lỗi
 
 - Mở `chrome://bookmarks/?q=chat`, xoá "ChatGPT" rồi Undo. Bookmark được khôi
